@@ -1,0 +1,32 @@
+{
+  "name": "was-keypress-enter",
+  "version": "0.1.0",
+  "description": "A simple function to check if a keypress was the return/enter key. The function takes an event and returns a boolean.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --recursive --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opr/was-keypress-enter.git"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "author": "Thomas Roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/opr/was-keypress-enter/issues"
+  },
+  "homepage": "https://github.com/opr/was-keypress-enter#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
+    "jsdom": "^11.3.0",
+    "mocha": "^4.0.1"
+  }
+}
