@@ -1,6 +1,6 @@
 {
   "name": "was-keypress-enter",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A simple function to check if a keypress was the return/enter key. The function takes an event and returns a boolean.",
   "main": "./lib/index.js",
   "scripts": {
