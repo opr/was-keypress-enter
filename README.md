@@ -43,4 +43,5 @@ export class CustomUserInput extends React.Component {
         <CustomComponent tabIndex="0" onClick={this.handleClick} onKeyPress={this.handleKeyPress} />
       );
     }
+}
 ```
