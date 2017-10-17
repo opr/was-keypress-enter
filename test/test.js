@@ -2,7 +2,7 @@
 
 import chai from 'chai';
 import {JSDOM} from 'jsdom';
-import wasKeypressEnter from '../index';
+import wasKeypressEnter from '../src/index';
 
 const document = new JSDOM(
     '<!doctype html>' +
