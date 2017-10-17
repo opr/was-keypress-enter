@@ -1,0 +1,15 @@
+notifications: # set notification options
+  email:
+    recipients:
+      - dev@darwindigital.co
+
+    # change is when the repo status goes from pass to fail or vice versa
+    on_success: never
+    on_failure: change
+  # Or we could just disable all email
+
+install:
+  - npm install
+
+script:
+  - npm test
