@@ -3,7 +3,7 @@
 yarn.lock
 test
 .idea
-README.md
 .travis.yml
 src
 *.tgz
+!lib
