@@ -22,7 +22,7 @@ document.getElementById('input-field-one').addEventListener('keydown', function(
 # Usage example in react
 
 ```jsx
-import {wasKeypressEnter} from 'was-keypress-enter';
+import wasKeypressEnter from 'was-keypress-enter';
 
 export class CustomUserInput extends React.Component {
 
