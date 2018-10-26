@@ -80,4 +80,16 @@ describe('was enter pressed?', () => {
         });
         input.dispatchEvent(enterKeypress);
     }).timeout(500);
+
+    it('returns false for things like mouse events', (done) => {
+
+        const mouseClick = new document.window.MouseEvent('click');
+        const input = document.window.document.getElementsByClassName('epic-input')[0];
+        input.addEventListener('click', (e) => {
+            if(!wasKeypressEnter(e)) {
+                done();
+            }
+        });
+        input.dispatchEvent(mouseClick);
+    }).timeout(500);
 });
