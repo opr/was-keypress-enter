@@ -111,7 +111,8 @@ describe('was enter pressed?', () => {
 
         const enterKeypress = new document.window.KeyboardEvent('keydown', {
             key: 'Enter',
-            code: 'Enter'
+            code: 'Enter',
+            which: undefined
         });
         const input = document.window.document.getElementsByClassName('epic-input')[0];
         input.addEventListener('keydown', (e) => {
