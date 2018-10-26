@@ -16,6 +16,24 @@
       "es2015"
     ]
   },
+  "nyc": {
+    "require": [
+      "@babel/register"
+    ],
+    "exclude": [
+      "lib/**"
+    ],
+    "include": [
+      "src/**"
+    ],
+    "reporter": [
+      "text",
+      "cobertura",
+      "lcov"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
   "author": "Thomas Roberts",
   "license": "ISC",
   "bugs": {
@@ -29,5 +47,8 @@
     "chai": "^4.1.2",
     "jsdom": "^11.3.0",
     "mocha": "^4.0.1"
+  },
+  "dependencies": {
+    "nyc": "^13.1.0"
   }
 }
