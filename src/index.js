@@ -11,7 +11,6 @@ export const wasKeypress = (e, value) => {
 
     //if this doesn't exist it probably isn't a keypress
     if(typeof e.which === 'undefined') {
-        console.log('i am so undefined right now');
         return false;
     }
 
