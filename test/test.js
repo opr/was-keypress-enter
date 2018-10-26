@@ -4,7 +4,7 @@ import chai from 'chai';
 import {JSDOM} from 'jsdom';
 import wasKeypressEnter from '../src/index';
 
-const document = new JSDOM(
+let document = new JSDOM(
     '<!doctype html>' +
     '<html>' +
     '<body>' +
@@ -26,6 +26,19 @@ const document = new JSDOM(
 chai.should();
 
 describe('Setup - main script', () => {
+
+    beforeEach(() => {
+        document = new JSDOM(
+            '<!doctype html>' +
+            '<html>' +
+            '<body>' +
+            '<button class="test-button">Click me</button>' +
+            '<input class="epic-input" type="text" />' +
+            '</body>' +
+            '</html>'
+        );
+    });
+
     it('should load', () => {
         wasKeypressEnter(null).should.equal(false);
     });
@@ -45,6 +58,19 @@ describe('Setup - main script', () => {
 });
 
 describe('was enter pressed?', () => {
+
+    beforeEach(() => {
+        document = new JSDOM(
+            '<!doctype html>' +
+            '<html>' +
+            '<body>' +
+            '<button class="test-button">Click me</button>' +
+            '<input class="epic-input" type="text" />' +
+            '</body>' +
+            '</html>'
+        );
+    });
+
     it('does not let you give it a null value', () => {
         wasKeypressEnter(null).should.equal(false);
     });
@@ -75,6 +101,21 @@ describe('was enter pressed?', () => {
         const input = document.window.document.getElementsByClassName('epic-input')[0];
         input.addEventListener('keydown', (e) => {
             if(wasKeypressEnter(e)) {
+                done();
+            }
+        });
+        input.dispatchEvent(enterKeypress);
+    }).timeout(500);
+
+    it('e.which is undefined, return false always', (done) => {
+
+        const enterKeypress = new document.window.KeyboardEvent('keydown', {
+            key: 'Enter',
+            code: 'Enter'
+        });
+        const input = document.window.document.getElementsByClassName('epic-input')[0];
+        input.addEventListener('keydown', (e) => {
+            if(!wasKeypressEnter(e)) {
                 done();
             }
         });

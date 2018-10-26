@@ -4,7 +4,7 @@
   "description": "A simple function to check if a keypress was the return/enter key. The function takes an event and returns a boolean.",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "mocha --require @babel/register --recursive --reporter spec",
+    "test": "mocha --require @babel/register --recursive --reporter progress",
     "cover": "cross-env NODE_ENV=test BABEL_ENV=test nyc --all mocha --recursive ./test",
     "build": "node_modules/.bin/babel src --out-dir lib"
   },
