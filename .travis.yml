@@ -1,3 +1,5 @@
+language: node_js
+
 notifications: # set notification options
   email:
     recipients:
