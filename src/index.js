@@ -1,4 +1,8 @@
-export default function (e) {
+const wasKeypressEnter = e => {
+    return wasKeypress(e, 13);
+};
+
+export const wasKeypress = (e, value) => {
 
     //check if e even exists
     if (e === null) {
@@ -10,11 +14,12 @@ export default function (e) {
         return false;
     }
 
-    if(e.which !== 13 ) {
+    if(e.which !== value ) {
         return false;
     }
 
     //if it makes it here it was probably enter
     return true;
-
 };
+
+export default wasKeypressEnter;
