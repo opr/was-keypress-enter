@@ -125,7 +125,7 @@ describe('was enter pressed?', () => {
 
     it('returns false for things like mouse events', (done) => {
 
-        const mouseClick = new document.window.MouseEvent('click', {which: 123});
+        const mouseClick = new document.window.MouseEvent('click', {which: undefined});
         const input = document.window.document.getElementsByClassName('epic-input')[0];
         input.addEventListener('click', (e) => {
             console.log(e.which, e, 'is undefined??');
